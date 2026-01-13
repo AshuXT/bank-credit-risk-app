@@ -15,7 +15,9 @@ use_cols = [
     "annual_inc", "loan_status"
 ]
 
-data = pd.read_csv(r"D:\project\data\loan_data.csv", usecols=use_cols)
+DATA_URL = "https://drive.google.com/uc?id=1Y_0LR1NgX9koOO1GmPb7nlkORZBFXlF7"
+data = pd.read_csv(DATA_URL, usecols=use_cols)
+
 
 # Create target
 data["risk"] = data["loan_status"].apply(
@@ -161,6 +163,7 @@ total_profit = sum(profit)
 
 st.subheader("Bank Profit Simulation Using AI")
 st.write("Total Profit from test customers ($):", round(total_profit, 2))
+
 
 
 
